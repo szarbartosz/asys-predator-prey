@@ -3,5 +3,5 @@
 ## Quickstart
 ```bash
 pip install -r requirements.txt
-python main.py
+solara run simulation.py
 ```
