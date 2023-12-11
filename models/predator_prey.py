@@ -33,7 +33,7 @@ class PredatorPreyModel(mesa.Model):
             self.grid.place_agent(agent, (x, y))
 
         self.datacollector = mesa.DataCollector(
-            model_reporters={"Predators": count_predators, "Preys": count_preys}, agent_reporters={"Wealth": "wealth"}
+            model_reporters={"Predators": count_predators, "Preys": count_preys}, agent_reporters={}
         )
 
     def step(self):
