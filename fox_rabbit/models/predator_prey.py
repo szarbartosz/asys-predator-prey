@@ -1,10 +1,11 @@
 import mesa
 import uuid
 import random
-from agents.grass import Grass
-from agents.rabbit import Rabbit
-from agents.fox import Fox
-from utils.model_reporters import count_preys, count_predators
+
+from fox_rabbit.agents.grass import Grass
+from fox_rabbit.agents.rabbit import Rabbit
+from fox_rabbit.agents.fox import Fox
+from fox_rabbit.utils.model_reporters import count_preys, count_predators
 
 
 class PredatorPreyModel(mesa.Model):
