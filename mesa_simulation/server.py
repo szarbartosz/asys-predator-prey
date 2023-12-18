@@ -40,9 +40,9 @@ def fox_rabbit_portrayal(agent):
     return portrayal
 
 
-canvas_element = CanvasGrid(fox_rabbit_portrayal, 20, 20, 500, 500)
+canvas_element = CanvasGrid(fox_rabbit_portrayal, 20, 20, 862, 862)
 chart_element = ChartModule([{"Label": "Foxes", "Color": "#ed851c"},
-                             {"Label": "Rabbits", "Color": "#919191"}])
+                             {"Label": "Rabbits", "Color": "#919191"}], canvas_width=500)
 
 model_params = {"grass": Checkbox('Grass Enabled', True),
                 "grass_regrowth_time": Slider('Grass Regrowth Time', 20, 1, 50),
