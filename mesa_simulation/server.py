@@ -23,14 +23,14 @@ def fox_rabbit_portrayal(agent):
         portrayal["Shape"] = "mesa_simulation/resources/fox.png"
         portrayal["scale"] = 0.9
         portrayal["Layer"] = 2
-        portrayal["text"] = round(agent.energy, 1)
+        # portrayal["text"] = round(agent.energy, 1)
         portrayal["text_color"] = "White"
 
     elif type(agent) is GrassPatch:
         if agent.fully_grown:
-            portrayal["Color"] = ["#00FF00", "#00CC00", "#009900"]
+            portrayal["Color"] = ["#72f760"]
         else:
-            portrayal["Color"] = ["#84e184", "#adebad", "#d6f5d6"]
+            portrayal["Color"] = ["#fadb6b"]
         portrayal["Shape"] = "rect"
         portrayal["Filled"] = "true"
         portrayal["Layer"] = 0
@@ -41,8 +41,8 @@ def fox_rabbit_portrayal(agent):
 
 
 canvas_element = CanvasGrid(fox_rabbit_portrayal, 20, 20, 500, 500)
-chart_element = ChartModule([{"Label": "Foxes", "Color": "#AA0000"},
-                             {"Label": "Rabbits", "Color": "#666666"}])
+chart_element = ChartModule([{"Label": "Foxes", "Color": "#ed851c"},
+                             {"Label": "Rabbits", "Color": "#919191"}])
 
 model_params = {"grass": Checkbox('Grass Enabled', True),
                 "grass_regrowth_time": Slider('Grass Regrowth Time', 20, 1, 50),
@@ -51,8 +51,7 @@ model_params = {"grass": Checkbox('Grass Enabled', True),
                                           0.01),
                 "initial_foxes": Slider('Initial Fox Population', 50, 10, 300),
                 "fox_reproduce": Slider('Fox Reproduction Rate', 0.05, 0.01, 1.0,
-                                         0.01,
-                                         description="The rate at which fox agents reproduce."),
+                                         0.01),
                 "fox_gain_from_food": Slider('Fox Gain From Food Rate', 20, 1, 50),
                 "rabbit_gain_from_food": Slider('Rabbit Gain From Food', 4, 1, 10)}
 
