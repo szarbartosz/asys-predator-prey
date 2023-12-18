@@ -3,7 +3,7 @@ from mesa import Agent
 
 class GrassPatch(Agent):
     '''
-    A patch of grass that grows at a fixed rate and it is eaten by sheep
+    A patch of grass that grows at a fixed rate and it is eaten by rabbit
     '''
 
     def __init__(self, unique_id, pos, model, fully_grown, countdown):

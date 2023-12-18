@@ -3,6 +3,6 @@
 ## Quickstart
 ```bash
 pip install -r requirements.txt
-solara run simulation.py # to run solara rendered fox/rabbit simulation
-python3 run.py # to run mesa visualized wolf/sheep simulation
+solara run simulation.py # to run solara rendered simulation
+python3 run.py # to run mesa visualized simulation
 ```

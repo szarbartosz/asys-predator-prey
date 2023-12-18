@@ -2,9 +2,9 @@ from mesa_simulation.random_walk import RandomWalker
 from mesa_simulation.agents.grass_patch import GrassPatch
 
 
-class Sheep(RandomWalker):
+class Rabbit(RandomWalker):
     '''
-    A sheep that walks around, reproduces (asexually) and gets eaten.
+    A rabbit that walks around, reproduces (asexually) and gets eaten.
     '''
 
     energy = None
@@ -28,7 +28,7 @@ class Sheep(RandomWalker):
             grass_patch = [obj for obj in this_cell
                            if isinstance(obj, GrassPatch)][0]
             if grass_patch.fully_grown:
-                self.energy += self.model.sheep_gain_from_food
+                self.energy += self.model.rabbit_gain_from_food
                 grass_patch.fully_grown = False
 
             # Death
@@ -37,11 +37,11 @@ class Sheep(RandomWalker):
                 self.model.schedule.remove(self)
                 living = False
 
-        if living and self.random.random() < self.model.sheep_reproduce:
-            # Create a new sheep:
+        if living and self.random.random() < self.model.rabbit_reproduce:
+            # Create a new rabbit:
             if self.model.grass:
                 self.energy /= 2
-            lamb = Sheep(self.model.next_id(), self.pos, self.model,
+            lamb = Rabbit(self.model.next_id(), self.pos, self.model,
                          self.moore, self.energy)
             self.model.grid.place_agent(lamb, self.pos)
             self.model.schedule.add(lamb)

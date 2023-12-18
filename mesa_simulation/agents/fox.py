@@ -1,10 +1,10 @@
 from mesa_simulation.random_walk import RandomWalker
-from mesa_simulation.agents.sheep import Sheep
+from mesa_simulation.agents.rabbit import Rabbit
 
 
-class Wolf(RandomWalker):
+class Fox(RandomWalker):
     '''
-    A wolf that walks around, reproduces (asexually) and eats sheep.
+    A fox that walks around, reproduces (asexually) and eats rabbit.
     '''
 
     energy = None
@@ -17,27 +17,27 @@ class Wolf(RandomWalker):
         self.random_move()
         self.energy -= 1
 
-        # If there are sheep present, eat one
+        # If there are rabbit present, eat one
         x, y = self.pos
         this_cell = self.model.grid.get_cell_list_contents([self.pos])
-        sheep = [obj for obj in this_cell if isinstance(obj, Sheep)]
-        if len(sheep) > 0:
-            sheep_to_eat = self.random.choice(sheep)
-            self.energy += self.model.wolf_gain_from_food
+        rabbit = [obj for obj in this_cell if isinstance(obj, Rabbit)]
+        if len(rabbit) > 0:
+            rabbit_to_eat = self.random.choice(rabbit)
+            self.energy += self.model.fox_gain_from_food
 
-            # Kill the sheep
-            self.model.grid.remove_agent(sheep_to_eat)
-            self.model.schedule.remove(sheep_to_eat)
+            # Kill the rabbit
+            self.model.grid.remove_agent(rabbit_to_eat)
+            self.model.schedule.remove(rabbit_to_eat)
 
         # Death or reproduction
         if self.energy < 0:
             self.model.grid.remove_agent(self)
             self.model.schedule.remove(self)
         else:
-            if self.random.random() < self.model.wolf_reproduce:
-                # Create a new wolf cub
+            if self.random.random() < self.model.fox_reproduce:
+                # Create a new fox cub
                 self.energy /= 2
-                cub = Wolf(self.model.next_id(), self.pos, self.model,
+                cub = Fox(self.model.next_id(), self.pos, self.model,
                            self.moore, self.energy)
                 self.model.grid.place_agent(cub, cub.pos)
                 self.model.schedule.add(cub)
