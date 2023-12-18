@@ -81,7 +81,7 @@ class FoxRabbit(Model):
             {"Foxes": lambda m: m.schedule.get_breed_count(Fox),
              "Rabbits": lambda m: m.schedule.get_breed_count(Rabbit)})
 
-        # Create rabbit:
+        # Create rabbits:
         for i in range(self.initial_rabbit):
             x = self.random.randrange(self.width)
             y = self.random.randrange(self.height)

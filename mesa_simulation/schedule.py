@@ -8,9 +8,6 @@ class RandomActivationByBreed(RandomActivation):
     A scheduler which activates each type of agent once per step, in random
     order, with the order reshuffled every step.
 
-    This is equivalent to the NetLogo 'ask breed...' and is generally the
-    default behavior for an ABM.
-
     Assumes that all agents have a step() method.
     '''
 
