@@ -13,10 +13,10 @@ from mesa import Model
 from mesa.space import MultiGrid
 from mesa.datacollection import DataCollector
 
-from wolf_sheep.agents.sheep import Sheep
-from wolf_sheep.agents.wolf import Wolf
-from wolf_sheep.agents.grass_patch import GrassPatch
-from wolf_sheep.schedule import RandomActivationByBreed
+from mesa_simulation.agents.sheep import Sheep
+from mesa_simulation.agents.wolf import Wolf
+from mesa_simulation.agents.grass_patch import GrassPatch
+from mesa_simulation.schedule import RandomActivationByBreed
 
 
 class WolfSheep(Model):

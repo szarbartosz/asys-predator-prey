@@ -2,10 +2,10 @@ import mesa
 import uuid
 import random
 
-from fox_rabbit.agents.grass import Grass
-from fox_rabbit.agents.rabbit import Rabbit
-from fox_rabbit.agents.fox import Fox
-from fox_rabbit.utils.model_reporters import count_preys, count_predators
+from solara_simulation.agents.grass import Grass
+from solara_simulation.agents.rabbit import Rabbit
+from solara_simulation.agents.fox import Fox
+from solara_simulation.utils.model_reporters import count_preys, count_predators
 
 
 class PredatorPreyModel(mesa.Model):

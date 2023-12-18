@@ -1,3 +1,3 @@
-from wolf_sheep.server import server
+from mesa_simulation.server import server
 
 server.launch()

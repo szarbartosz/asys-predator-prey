@@ -1,4 +1,4 @@
-from fox_rabbit.models.predator_prey import PredatorPreyModel
+from solara_simulation.models.predator_prey import PredatorPreyModel
 from mesa.experimental import JupyterViz
 
 

@@ -1,5 +1,5 @@
-from wolf_sheep.random_walk import RandomWalker
-from wolf_sheep.agents.grass_patch import GrassPatch
+from mesa_simulation.random_walk import RandomWalker
+from mesa_simulation.agents.grass_patch import GrassPatch
 
 
 class Sheep(RandomWalker):

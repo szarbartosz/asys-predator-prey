@@ -2,10 +2,10 @@ from mesa.visualization.ModularVisualization import ModularServer
 from mesa.visualization.modules import CanvasGrid, ChartModule
 from mesa.visualization.UserParam import Checkbox, Slider
 
-from wolf_sheep.agents.wolf import Wolf
-from wolf_sheep.agents.sheep import Sheep
-from wolf_sheep.agents.grass_patch import GrassPatch
-from wolf_sheep.model import WolfSheep
+from mesa_simulation.agents.wolf import Wolf
+from mesa_simulation.agents.sheep import Sheep
+from mesa_simulation.agents.grass_patch import GrassPatch
+from mesa_simulation.model import WolfSheep
 
 
 def wolf_sheep_portrayal(agent):
@@ -15,12 +15,12 @@ def wolf_sheep_portrayal(agent):
     portrayal = {}
 
     if type(agent) is Sheep:
-        portrayal["Shape"] = "wolf_sheep/resources/sheep_icon.png"
+        portrayal["Shape"] = "mesa_simulation/resources/rabbit.png"
         portrayal["scale"] = 0.9
         portrayal["Layer"] = 1
 
     elif type(agent) is Wolf:
-        portrayal["Shape"] = "wolf_sheep/resources/wolf_icon.png"
+        portrayal["Shape"] = "mesa_simulation/resources/fox.png"
         portrayal["scale"] = 0.9
         portrayal["Layer"] = 2
         portrayal["text"] = round(agent.energy, 1)
